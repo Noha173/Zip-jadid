@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدفع والسحب</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>الدفع والسحب</h1>
+        <p>رابط PayPal: <a href="https://www.paypal.com/ncp/payment/M3KD8C93SZW2S" target="_blank">ادفع الآن</a></p>
+        <p>عنوان TRC20: TQkHHVUfQC6oZ6rZYxNuUL32EvCAyM8Rd2</p>
+        <form onsubmit="handleSubmit(event)">
+            <input type="text" id="amount" placeholder="أدخل المبلغ" required>
+            <select id="method" required>
+                <option value="">اختر الطريقة</option>
+                <option value="PayPal">PayPal</option>
+                <option value="TRC20">TRC20</option>
+            </select>
+            <button type="submit">طلب السحب</button>
+        </form>
+    </div>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            const amount = document.getElementById("amount").value;
+            const method = document.getElementById("method").value;
+            alert(`تم تقديم طلب السحب بمبلغ ${amount} عبر ${method}`);
+        }
+    </script>
+</body>
+</html>
+    
